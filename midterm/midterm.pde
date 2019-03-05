@@ -1,3 +1,4 @@
+rock meteor2;
 projectile meteor;
 Player goomba;
 
@@ -7,7 +8,8 @@ boolean crater = false;
 
 void setup() {
   size(700, 500);
-
+  imageMode(CENTER);
+  meteor2 = new rock();
   imageMode(CENTER);
   meteor = new projectile();
   imageMode(CENTER);
@@ -20,9 +22,11 @@ void draw() {
     goomba.display();
   }
   meteor.display();
+  meteor2.display();
   fill(#29B23F);
   rect(0, 350, 700, 200);
   meteor.move();
+  meteor2.move();
 }
 void keyPressed() {
   if (keyPressed == true) {
