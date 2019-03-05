@@ -14,7 +14,7 @@ class projectile {
     meteor = loadImage("meteor.png");
     xpos = width;
     ypos = 0;
-    meteor2 = loadImage("meteor.png");
+    meteor2 = loadImage("meteor2.png");
     xpos2 = 0;
     ypos2 = 0;
   }
@@ -47,6 +47,6 @@ class projectile {
   }
   void display() {
     image(meteor, xpos, ypos, 40, 40);
-    image(meteor,xpos2,ypos2,40,40);
+    image(meteor2,xpos2,ypos2,20,20);
   }
 }
