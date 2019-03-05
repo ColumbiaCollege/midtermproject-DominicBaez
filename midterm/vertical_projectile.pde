@@ -1,6 +1,5 @@
 class projectile {
-  float xpos;
-  float ypos;
+  float xpos, ypos;
   float xpos2, ypos2;
   float xspeed = 5;
   float yspeed = 3;
