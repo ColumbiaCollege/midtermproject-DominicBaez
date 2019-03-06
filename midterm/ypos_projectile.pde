@@ -41,11 +41,11 @@ class projectile {
     if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
       crater = true;
       fill (#674E3D);
-      ellipse(goomba.xPos,360,50,15);
+      ellipse(goomba.xPos, 360, 50, 15);
     }
   }
   void display() {
     image(meteor, xpos, ypos, 40, 40);
-    image(meteor2,xpos2,ypos2,20,20);
+    image(meteor2, xpos2, ypos2, 20, 20);
   }
 }
