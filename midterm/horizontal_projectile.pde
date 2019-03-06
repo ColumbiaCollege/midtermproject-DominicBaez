@@ -8,7 +8,7 @@ class rock {
   int xdirection = -1;
   int ydirection = 1;
   int xdirection2 = 1;
-  int ydirection2 = -1;
+  int ydirection2 = 1;
   PImage meteor;
   PImage meteor2;
   
@@ -22,7 +22,7 @@ class rock {
     meteor = loadImage("meteor.png");
     xpos3 = 420;
     ypos3 = 0;
-    meteor2 = loadImage("meteor.png");
+    meteor2 = loadImage("meteor2.png");
     xpos4 = 560;
     ypos4 = 0;
   }
@@ -51,9 +51,35 @@ class rock {
       fill (#674E3D);
       ellipse(goomba.xPos,360,50,15);
     }
+    xpos3 = xpos3+(xspeed*xdirection);
+    ypos3 = ypos3+(yspeed*ydirection);
+    if (ypos3>500) {
+      xpos3 = 420;
+      ypos3 = 0;
+      crater = false;
+    }
+    if (ypos3>350 && abs(goomba.xPos-xpos3)<30) {
+      crater = true;
+      fill (#674E3D);
+      ellipse(goomba.xPos,360,50,15);
+    }
+    xpos4 = xpos4+(xspeed*xdirection2);
+    ypos4 = ypos4+(yspeed*ydirection2);
+    if (ypos4>500) {
+      xpos4 = 560;
+      ypos4 = 0;
+      crater = false;
+    }
+    if (ypos4>350 && abs(goomba.xPos-xpos4)<30) {
+      crater = true;
+      fill (#674E3D);
+      ellipse(goomba.xPos,360,50,15);
+    }
   }
   void display() {
     image(meteor,xpos,ypos,40,40);
     image(meteor2,xpos2,ypos2,20,20);
+    image(meteor,xpos3,ypos3,40,40);
+    image(meteor2,xpos4,ypos4,20,20);
   }
 }
