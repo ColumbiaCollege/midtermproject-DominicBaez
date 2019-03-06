@@ -20,13 +20,18 @@ void draw() {
   if (!crater) {
     goomba.move();
     goomba.display();
+    meteor.display();
+    meteor2.display();
+    fill(#29B23F);
+    rect(0, 350, 700, 200);
+    meteor.move();
+    meteor2.move();
   }
-  meteor.display();
-  meteor2.display();
-  fill(#29B23F);
-  rect(0, 350, 700, 200);
-  meteor.move();
-  meteor2.move();
+  if (crater == true) {
+    fill (0);
+    textSize (25);
+    text("GAME OVER", 300, height/2);
+  }
 }
 void keyPressed() {
   if (keyPressed == true) {
