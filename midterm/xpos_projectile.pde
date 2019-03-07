@@ -1,4 +1,6 @@
+//identifier for the xpos projectile object
 class rock {
+  //variables 
   float xpos, ypos;
   float xpos2, ypos2;
   float xpos3, ypos3;
@@ -12,7 +14,9 @@ class rock {
   PImage meteor;
   PImage meteor2;
 
+//constructor
   rock() {
+    // loads two images, and depending on the location determines which will be displayed
     meteor = loadImage("meteor4.png");
     xpos = 140;
     ypos = 0;
@@ -26,85 +30,109 @@ class rock {
     xpos4 = 560;
     ypos4 = 0;
   }
+  //methods
   void move() {
+    // if the first meteor loads on the xposition and is lower than 140 then it will move left
     if (xpos<140) {
+      //equation used to allow movement for left
       xpos = xpos+(xspeed*xdirection);
       ypos = ypos+(yspeed*ydirection);
+      //if statement where if the meteor passes the height, then it will respawn back on top of the screen in a randomized location
       if (ypos>500) {
         xpos = random(50, 280);
         ypos = 0;
         crater = false;
       }
+      // if statement where if the meteor passes the set yposition and meets with the goomba then the crater boolean becomes true
       if (ypos>350 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
       }
-    }
+    }//if the first meteor loads on the xposition and is more than 140 then it will move right 
     if (xpos>140) {
+      //equation used to allow the meteor to move right
       xpos = xpos+(xspeed*xdirection2);
       ypos = ypos+(yspeed*ydirection2);
+      //if statement that resets the meteor at a random xposition
       if (ypos>500) {
         xpos = random (50, 280);
         ypos = 0;
         crater = false;
       }
+      //if statement that turns the crater boolean true if the conditions are met
       if (ypos>350 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
       }
     }
+    // if the first meteor loads on the xpos and is 140 then it will move down
     if (xpos == 140) {
-      xpos = xpos+(xspeed);
+      //equations used to allow the meteor to move down
+      xpos = xpos*xspeed;
       ypos = ypos+(yspeed*ydirection);
+      //if statement that respawns the meteor at random xpositions
       if (ypos>500) {
         xpos = random(50, 280);
         ypos = 0;
         crater = false;
       }
+      //if statement that turns the crater boolean true if the conditions are met
       if (ypos>350 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
       }
     }
+    // if the second meteor loads on the xpos and is less than 280 then it will move left
     if (xpos2<280) {
+      //equations that allow the meteor to move left
       xpos2 = xpos2+(xspeed*xdirection);
       ypos2 = ypos2+(yspeed*ydirection2);
+      //if statement that respawns the meteor at a random xposition
       if (ypos2>500) {
         xpos2 = random(140, 420);
         ypos2 = 0;
         crater = false;
       }
+      //if statement that turns the crater boolean true if the conditions are met
       if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
         ellipse (goomba.xPos, 360, 50, 15);
       }
     }
+    //if the second meteor loads on the xpos and is greater than 280 then the meteor will move right
     if (xpos2>280) {
+      //equations
       xpos2 = xpos2+(xspeed*xdirection2);
       ypos2 = ypos2+(yspeed*ydirection2);
       if (ypos2>500) {
+        //respawn if statement
         xpos2 = random(140, 420);
         ypos2 = 0;
         crater = false;
       }
+      //if statement that turns crater boolean true
       if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
       }
     }
+    // if the second meteor loads on the xpos and is 280 then it will move down
     if (xpos2 == 280) {
-      xpos2 = xpos2+(xspeed);
+      //equations
+      xpos2 = xpos2*xspeed;
       ypos2 = ypos2+(yspeed*ydirection2);
+      //respawn if statement
       if (ypos2>500) {
         xpos2 = random(140, 420);
         ypos2 = 0;
         crater = false;
       }
+      // if statement that turns the crater boolean true
       if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
@@ -140,7 +168,7 @@ class rock {
       }
     }
     if (xpos3 == 420) {
-      xpos3 = xpos3+(xspeed);
+      xpos3 = xpos*xspeed;
       ypos = ypos3+(yspeed*ydirection2);
       if (ypos3>500) {
         xpos3 = random(280, 560);
@@ -182,7 +210,7 @@ class rock {
       }
     }
     if (xpos4 == 560) {
-      xpos4 = xpos4+(xspeed);
+      xpos4 = xpos4*xspeed;
       ypos4 = ypos4+(yspeed*ydirection2);
       if (ypos4>500) {
         xpos4 = random(420, 650);
