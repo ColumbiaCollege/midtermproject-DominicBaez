@@ -23,7 +23,7 @@ class projectile {
     ypos = ypos+(yspeed*ydirection);
     if (xpos<0) {
       xpos = width;
-      ypos = 0;
+      ypos = random(0,150);
       crater = false;
     }
     if (ypos>350 && abs(goomba.xPos -xpos)<30) {
@@ -35,7 +35,7 @@ class projectile {
     ypos2 = ypos2+(yspeed*ydirection2);
     if (xpos2>width) {
       xpos2 = 0;
-      ypos2 = 0;
+      ypos2 = random(0,100);
       crater = false;
     }
     if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
@@ -46,6 +46,6 @@ class projectile {
   }
   void display() {
     image(meteor, xpos, ypos, 40, 40);
-    image(meteor2, xpos2, ypos2, 20, 20);
+    image(meteor2, xpos2, ypos2, 40, 40);
   }
 }
