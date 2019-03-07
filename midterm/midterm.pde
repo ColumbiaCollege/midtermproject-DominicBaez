@@ -1,5 +1,6 @@
 //class identifiers for the objects
 rock meteor2;
+rock rocky;
 projectile meteor;
 Player goomba;
 
@@ -15,6 +16,7 @@ void setup() {
   // loads the objects and centers the image when displayed
   imageMode(CENTER);
   meteor2 = new rock();
+  rocky =new rock();
   imageMode(CENTER);
   meteor = new projectile();
   imageMode(CENTER);
@@ -39,12 +41,14 @@ void draw() {
       //methods for the meteors along the ypos that allows it to move and displays it on the screen
       meteor.display();
       meteor2.display();
+      //rocky.display();
       //color for the rectangle which functions as the ground
       fill(#29B23F);
       rect(0, 350, 700, 200);
       //methods for the meteors along the xpos that allows it to move and displays it on the screen
       meteor.move();
       meteor2.move();
+      //rocky.move();
     }
     //if the crater boolean is true then an ellipse displays where they goomba was hit and also displays text
     if (crater == true) {

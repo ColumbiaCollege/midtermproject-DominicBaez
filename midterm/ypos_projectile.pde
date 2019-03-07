@@ -33,7 +33,7 @@ class projectile {
       crater = false;
     }
     //if statement that turns the crater boolean true if the conditions are met
-    if (ypos>350 && abs(goomba.xPos -xpos)<30) {
+    if (ypos>350 && ypos<360 && abs(goomba.xPos -xpos)<30) {
       crater = true;
       fill(#674E3D);
       ellipse(goomba.xPos, 360, 50, 15);
@@ -48,7 +48,7 @@ class projectile {
       crater = false;
     }
     //if statement that turns the crater boolean true if the conditions are met
-    if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
+    if (ypos2>350 && ypos2<360 && abs(goomba.xPos-xpos2)<30) {
       crater = true;
       fill (#674E3D);
       ellipse(goomba.xPos, 360, 50, 15);

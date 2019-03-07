@@ -18,16 +18,16 @@ class rock {
   rock() {
     // loads two images, and depending on the location determines which will be displayed
     meteor = loadImage("meteor4.png");
-    xpos = 140;
+    xpos = 140 + random(20);
     ypos = 0;
     meteor2 = loadImage("meteor3.png");
-    xpos2 = 280;
+    xpos2 = 280 + random(20);
     ypos2 = 0;
     meteor = loadImage("meteor4.png");
-    xpos3 = 420;
+    xpos3 = 420 + random(20);
     ypos3 = 0;
     meteor2 = loadImage("meteor3.png");
-    xpos4 = 560;
+    xpos4 = 560 + random(20);
     ypos4 = 0;
   }
   //methods
@@ -44,7 +44,7 @@ class rock {
         crater = false;
       }
       // if statement where if the meteor passes the set yposition and meets with the goomba then the crater boolean becomes true
-      if (ypos>350 && abs(goomba.xPos-xpos)<30) {
+      if (ypos>350 && ypos<360 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -61,7 +61,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos>350 && abs(goomba.xPos-xpos)<30) {
+      if (ypos>350 && ypos<360 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -79,7 +79,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos>350 && abs(goomba.xPos-xpos)<30) {
+      if (ypos>350 && ypos<360 && abs(goomba.xPos-xpos)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -97,7 +97,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
+      if (ypos2>350 && ypos2<360 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
         ellipse (goomba.xPos, 360, 50, 15);
@@ -115,7 +115,7 @@ class rock {
         crater = false;
       }
       //if statement that turns crater boolean true
-      if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
+      if (ypos2>350 && ypos2<360 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -133,7 +133,7 @@ class rock {
         crater = false;
       }
       // if statement that turns the crater boolean true
-      if (ypos2>350 && abs(goomba.xPos-xpos2)<30) {
+      if (ypos2>350 && ypos2<360 && abs(goomba.xPos-xpos2)<30) {
         crater = true;
         fill (#674E3D);
         ellipse (goomba.xPos, 360, 50, 15);
@@ -151,7 +151,7 @@ class rock {
         crater = false;
       }
       //if statement that turns crater boolean true if conditions are met
-      if (ypos3>350 && abs(goomba.xPos-xpos3)<30) {
+      if (ypos3>350 && ypos3<360 && abs(goomba.xPos-xpos3)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -169,7 +169,7 @@ class rock {
         crater = false;
       }
       //if statement that turns crater boolean true if conditions are met
-      if (ypos3>350 && abs(goomba.xPos-xpos3)<30) {
+      if (ypos3>350 && ypos3<360 && abs(goomba.xPos-xpos3)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -187,7 +187,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos3>350 && abs(goomba.xPos-xpos3)<30) {
+      if (ypos3>350 && ypos3<360 && abs(goomba.xPos-xpos3)<30) {
         crater = true;
         fill (#674E3D);
         ellipse (goomba.xPos, 360, 50, 15);
@@ -205,7 +205,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos>350 && abs(goomba.xPos-xpos4)<30) {
+      if (ypos>350 && ypos4<360 && abs(goomba.xPos-xpos4)<30) {
         crater = true;
         fill (#674E3D);
         ellipse (goomba.xPos, 360, 50, 15);
@@ -223,7 +223,7 @@ class rock {
         crater = false;
       }
       //if statement that turns the crater boolean true if the conditions are met
-      if (ypos4>350 && abs(goomba.xPos-xpos4)<30) {
+      if (ypos4>350 && ypos4<360 && abs(goomba.xPos-xpos4)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
@@ -241,7 +241,7 @@ class rock {
         crater = false;
       }
       // if statemtent that turns the crater boolean true if the conditions are met
-      if (ypos4>350 && abs(goomba.xPos-xpos4)<30) {
+      if (ypos4>350 && ypos4<360 && abs(goomba.xPos-xpos4)<30) {
         crater = true;
         fill (#674E3D);
         ellipse(goomba.xPos, 360, 50, 15);
