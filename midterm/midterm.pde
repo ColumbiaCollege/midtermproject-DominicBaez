@@ -21,7 +21,7 @@ void setup() {
   goomba= new Player();
 }
 void draw() {
-  //sets the color of the background
+  //background wipe
   background (#1D8CDE);
   //boolean where text appears
   if (start == false) {
